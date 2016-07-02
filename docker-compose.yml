@@ -1,27 +1,20 @@
 version: '2'
 services:
   logic:
-
-
-
-
-
-
+    build: ./logic
+    depends_on:
+      - filler
+      - charger
 
   filler:
-
-
-
-
-
-
+    build: ./filler
 
   charger:
-
-
-
-
-
-
+    build: ./charger
 
   interface:
+    build: ./interface
+    ports:
+      - 8080:8080
+    depends_on:
+      - logic
