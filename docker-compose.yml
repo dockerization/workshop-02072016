@@ -25,3 +25,8 @@ services:
 
 
   interface:
+    build: ./interface
+    depends_on:
+      - logic
+    ports:
+      - "8080:8080"
