@@ -5,12 +5,18 @@ services:
     depends_on:
        - filler
        - charger
-
+    networks:
+      - backend
+      
   filler:
     image: registry.dockerization.xyz/dc/filler:latest
+    networks:
+      - backend
 
   charger:
     image: registry.dockerization.xyz/dc/charger:latest
+    networks:
+      - backend
 
   interface:
     image: registry.dockerization.xyz/dc/interface:latest
@@ -18,3 +24,11 @@ services:
       - logic
     ports:
       - "8080:8080"
+    networks:
+      - backend
+      - web
+networks:
+  backend:
+    driver: bridge
+  web:
+    driver: bridge
