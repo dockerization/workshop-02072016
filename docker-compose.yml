@@ -7,10 +7,9 @@ services:
        - charger
 
   filler:
-
-
-
-
+    build: ./filler
+    depends_on:
+      - logic
 
 
 
@@ -23,3 +22,8 @@ services:
 
 
   interface:
+    build: ./interface
+    depends_on:
+      - logic
+    ports:
+      - "8080:8080"
