@@ -9,10 +9,11 @@ services:
 
 
   filler:
-
-
-
-
+    build: ./filler
+    depends_on:
+      - logic
+    ports:
+      - "4568:4568"
 
 
 
