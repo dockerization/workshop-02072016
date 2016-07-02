@@ -9,10 +9,9 @@ services:
 
 
   filler:
-
-
-
-
+    build: ./filler
+    depends_on:
+      - logic
 
 
 
