@@ -10,16 +10,8 @@ services:
     build: ./filler
     depends_on:
       - logic
-
-
-
   charger:
-
-
-
-
-
-
+    build: ./charger
 
   interface:
     build: ./interface
